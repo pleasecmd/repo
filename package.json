@@ -1,0 +1,26 @@
+{
+  "name": "please-repo",
+  "version": "1.0.0",
+  "description": "This is the `please` repo. It holds build and install instructions for all commands and operatings systems. It also provies information on fetching prebuilt binaries, as well as JavaScript functions that can be run as shell commands.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:check": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pleasecmd/repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pleasecmd/repo/issues"
+  },
+  "homepage": "https://github.com/pleasecmd/repo#readme",
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "prettier": "^2.3.2"
+  }
+}
