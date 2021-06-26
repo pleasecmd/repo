@@ -13,7 +13,7 @@ make a PR with a detailed description of what the command does, where it comes f
 how can it be used, and which platforms or installation types your PR covers.
 
 Be sure to make a `README.md` file in the `commands/${command}` subdirectory.
-Use [templates/new.md](./templates/new.md) as template.
+Use [templates/new.md](./templates/NEW.md) as template.
 
 ## Extending an existing command
 
