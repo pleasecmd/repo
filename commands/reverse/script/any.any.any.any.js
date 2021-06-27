@@ -4,7 +4,7 @@ module.exports.run = (argv) => {
   }
   const chunks = [];
   process.stdin.on("data", (chunk) => chunks.push(chunk.toString()));
-  process.stdin.on("drain", () => {
+  process.stdin.on("close", () => {
     console.log(chunks.join("").split("").reverse().join(""));
     chunks.length = 0;
   });
