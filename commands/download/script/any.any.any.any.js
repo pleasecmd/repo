@@ -5,7 +5,7 @@ const { basename } = require("fs");
 
 module.exports.run = async (argv) => {
   const args = minimist(argv);
-  if (args._.length > 0) {
+  if (args._.length > 1) {
     console.error("Only one url can be downloaded at a time");
     process.exit(1);
   }
