@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const minimist = require("minimist");
 const { writeFileSync } = require("fs");
-const { basename } = require("fs");
+const { basename } = require("path");
 
 module.exports.run = async (argv) => {
   const args = minimist(argv);
