@@ -11,7 +11,6 @@ const newBar = (path, total) => {
   const prettyTotal = prettyBytes(total);
   const config = {
     format: `${name} {bar} {prettySize}/${prettyTotal} @ {speed}`,
-    hideCursor: true,
   };
   const bar = new cliProgress.SingleBar(
     config,
