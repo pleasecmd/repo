@@ -10,7 +10,7 @@ const newBar = (path, total) => {
   const name = basename(path);
   const prettyTotal = prettyBytes(total);
   const config = {
-    format: `${name} {bar} {prettySize}/${prettyTotal} @ {speed}`,
+    format: `${name} {bar} {prettySize}/${prettyTotal} ⇣ {speed}`,
   };
   const bar = new cliProgress.SingleBar(
     config,
