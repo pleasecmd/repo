@@ -14,7 +14,7 @@ const newBar = (path, total) => {
   };
   const bar = new cliProgress.SingleBar(
     config,
-    cliProgress.Presets.shades_classic
+    cliProgress.Presets.shades_grey
   );
 
   bar.start(total, 0, {
