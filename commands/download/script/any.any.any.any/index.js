@@ -17,9 +17,13 @@ const newBar = (path, total) => {
     cliProgress.Presets.shades_classic
   );
 
+  const unitless = prettyTotal.split(" ").shift();
+  const pre = unitless.length > 1 ? " ".replace(unitless.length - 1) : "";
+  const prettySize = pre + "0";
+
   bar.start(total, 0, {
     speed: "N/A",
-    prettySize: 0,
+    prettySize,
   });
 
   return bar;
@@ -33,10 +37,17 @@ const progress = (path, total, state, bar = newBar(path, total), prev = 0) => {
 
   const size = existsSync(path) ? statSync(path).size : 0;
 
+  const unitless = prettyBytes(total).split(" ").shift();
+  const currUnitless = prettyBytes(size).split(" ").shift();
+  const pre =
+    unitless.length > currUnitless.length
+      ? " ".replace(unitless.length - currUnitless.length)
+      : "";
+
   if (size) {
     bar.update(size, {
       speed: prettyBytes((size - prev) * 10) + "/s",
-      prettySize: prettyBytes(size).split(" ").shift(),
+      prettySize: pre + currUnitless,
     });
   }
 
