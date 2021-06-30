@@ -15,7 +15,7 @@ const gpg = `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg 
 const addRepo = `echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`;
 
 module.exports.install = (config) => {
-  ubuntu.repo.update();
+  ubuntu.repo.update([], config);
   ubuntu.install(prerequisites, [], config);
   const stdio = config.silentInstall ? "ignore" : "pipe";
   execSync(gpg, { stdio, shell: true });
