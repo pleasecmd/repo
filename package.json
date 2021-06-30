@@ -24,6 +24,6 @@
     "prettier": "^2.3.2"
   },
   "dependencies": {
-    "@please.dev/lib": "^0.4.4"
+    "@please.dev/lib": "^0.4.5"
   }
 }

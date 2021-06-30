@@ -16,10 +16,10 @@ const addRepo = `echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-arch
 
 module.exports.install = (config) => {
   ubuntu.repo.update();
-  ubuntu.install(prerequisites);
+  ubuntu.install(prerequisites, [], config);
   const stdio = config.silentInstall ? "ignore" : "pipe";
   execSync(gpg, { stdio, shell: true });
   execSync(addRepo, { stdio, shell: true });
-  ubuntu.repo.update();
-  ubuntu.install(docker);
+  ubuntu.repo.update([], config);
+  ubuntu.install(docker, [], config);
 };
